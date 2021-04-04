@@ -8,10 +8,6 @@ import sys
 import xlsxwriter
 import xlrd
 import os
-from threading import Thread
-from scrapy.utils.project import get_project_settings
-
-SETTINGS = get_project_settings()
 
 
 class Window(QMainWindow):
@@ -143,6 +139,4 @@ if __name__ == "__main__":
     # creating thread
     App = QApplication(sys.argv)
     window = Window()
-    t1 = Thread(target=sys.exit(App.exec()), args=(10,))
-
-
+    sys.exit(App.exec())
